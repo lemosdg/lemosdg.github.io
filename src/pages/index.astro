@@ -1,11 +1,30 @@
 ---
 import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+	<html>
+  <head>
+    <title>Lenguajes que conozco</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-900 font-sans p-6">
+    <h1 class="text-4xl font-bold mb-8 text-center">Lenguajes que Conozco</h1>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Welcome 
+        language="JavaScript"
+        icon="https://upload.wikimedia.org/wikipedia/commons/6/64/JavaScript-logo.png"
+        description="JavaScript es un lenguaje de programación de alto nivel, ampliamente utilizado para desarrollo web."
+      />
+
+      <Welcome 
+        language="Java"
+        icon="https://upload.wikimedia.org/wikipedia/commons/6/6e/Java_logo_%282013%29.svg"
+        description="Java es un lenguaje de programación orientado a objetos, usado ampliamente en el desarrollo de aplicaciones empresariales."
+      />
+    </div>
+  </body>
+</html>
