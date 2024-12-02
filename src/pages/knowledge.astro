@@ -1,0 +1,36 @@
+---
+import Card from '../components/Card.astro';
+import Nav from "../components/Nav.astro"
+import Layout from '../layouts/Layout.astro';
+import '../index.css';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lenguajes que conozco</title>
+  </head>
+  <Layout>
+    <Nav />
+    <section class="flex mx-60">
+      <Card 
+        language="JavaScript"
+        icon="https://www.conectasoftware.com/wp-content/uploads/2020/03/JS.jpg"
+        description="JavaScript es un lenguaje de programacion de alto nivel, ampliamente utilizado para desarrollo web."
+      />
+      <Card 
+        language="React"
+        icon="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1024px-React.svg.png"
+        description="React es una biblioteca Javascript de codigo abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola pagina."
+      />
+      <Card 
+        language="Next"
+        icon="https://devtop.io/wp-content/uploads/2022/11/Next-JS-1024x614.png"
+        description="Next.js es un marco web de desarrollo front-end de React de código abierto creado por Vercel que habilita funcionalidades como la representación del lado del servidor."
+      />
+    </section>
+  </Layout>
+</html>
