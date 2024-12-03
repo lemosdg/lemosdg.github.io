@@ -1,11 +1,8 @@
 ---
-const { language, icon, description } = Astro.props;
+const { language, icon } = Astro.props;
 ---
 
-<div class="bg-white shadow-lg rounded-lg p-6 max-w-sm w-full mx-auto">
-  <div class="flex items-center justify-center mb-4">
-    <img src={icon} alt={language} class="w-16 h-16"/>
-  </div>
-  <h2 class="text-xl font-semibold text-center text-red">{language}</h2>
-  <p class="text-gray-700 text-center mt-2">{description}</p>
+<div class="bg-white shadow-lg rounded-lg p-6 max-w-sm w-full mx-8 px-14 flex justify-between">
+  <img  src={icon} alt={language} class="w-10 h-10"/>  
+  <h2 class="text-xl font-semibolds">{language}</h2>
 </div>

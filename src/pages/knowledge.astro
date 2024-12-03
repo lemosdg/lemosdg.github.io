@@ -15,21 +15,58 @@ import '../index.css';
   </head>
   <Layout>
     <Nav />
-    <section class="flex mx-60">
+    <div class="w-full flex justify-center items-center my-16">
+          <p class="rounded-3xl px-4 py-2 bg-white font-bold">Lenguajes</p>
+    </div>
+    <section class="grid grid-cols-4 gap-4 mx-72 h-auto">
       <Card 
         language="JavaScript"
-        icon="https://www.conectasoftware.com/wp-content/uploads/2020/03/JS.jpg"
-        description="JavaScript es un lenguaje de programacion de alto nivel, ampliamente utilizado para desarrollo web."
+        icon="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*Dk_c6Kwi4JaIxYDlvE3NfQ.png"
+      />
+      <Card 
+        language="TypeScript"
+        icon="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*JsyV8lXMuTbRVLQ2FPYWAg.png"
       />
       <Card 
         language="React"
         icon="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1024px-React.svg.png"
-        description="React es una biblioteca Javascript de codigo abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola pagina."
       />
       <Card 
         language="Next"
         icon="https://devtop.io/wp-content/uploads/2022/11/Next-JS-1024x614.png"
-        description="Next.js es un marco web de desarrollo front-end de React de código abierto creado por Vercel que habilita funcionalidades como la representación del lado del servidor."
+      />
+      <Card 
+        language="Astro"
+        icon="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*nLbfO_PdTSpeCdZQuUr8RQ.png"
+      />
+      <Card 
+        language="Tailwind"
+        icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVgHWDyjwN9qZsPChFzc5PRfOOOqbfgXqR3w&s"
+      />
+    </section>
+    <div class="w-full flex justify-center items-center my-16">
+      <p class="rounded-3xl px-4 py-2 bg-white font-bold">Tecnologias</p>
+    </div>
+    <section class="grid grid-cols-4 gap-4 mx-72 h-auto">
+      <Card 
+        language="Git"
+        icon="https://victorroblesweb.es/wp-content/uploads/2018/04/git.png"
+      />
+      <Card 
+        language="Docker"
+        icon="https://blog.tiraquelibras.com/wp-content/uploads/2020/05/docker-copy-3135ce60d0-512x500.png"
+      />
+      <Card 
+        language="Husky"
+        icon="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/dog-face.png"
+      />
+      <Card 
+        language="Jest"
+        icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJSJmlNYGBG0wZYVdNpEFAPzVSnGM3LdOIBw&s"
+      />
+      <Card 
+        language="Cypess"
+        icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrvVqEapXsm3wyIBCj0j6GwUMwEpsUElyGSA&s"
       />
     </section>
   </Layout>
