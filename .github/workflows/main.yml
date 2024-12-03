@@ -1,0 +1,32 @@
+name: Deploy Astro Site
+
+on:
+  push:
+    branches:
+      - main  # Esta es la rama que activará el despliegue
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'  # Asegúrate de que la versión sea la adecuada para tu proyecto
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the Astro site
+      run: npm run build  # Esto genera el directorio dist/
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages  # Rama donde se publicará el sitio
+        folder: dist  # Carpeta generada por Astro
+        token: ${{ secrets.GITHUB_TOKEN }}  # Token necesario para la acción
