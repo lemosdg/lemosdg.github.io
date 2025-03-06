@@ -1,8 +1,28 @@
 ---
-const { language, icon } = Astro.props;
+interface Skill {
+  language: string;
+  level: string;
+}
+
+// Definir habilidades directamente dentro de Card.astro
+const skills: Skill[] = [
+  { language: "PHP", level: "Intermediate" },
+  { language: "Java", level: "Beginner" },
+  { language: "MySQL", level: "Intermediate" },
+  { language: "Node.js", level: "Advanced" }
+];
+
+const { title, bgColor = "bg-slate-400", textColor = "text-gray-950" } = Astro.props;
 ---
 
-<div class="bg-white shadow-lg rounded-lg p-6 max-w-sm w-full mx-8 px-14 flex justify-between">
-  <img src={icon} alt={language} class="w-10 h-10"/>
-  <h2 class="text-xl font-semibold">{language}</h2>
+<div class={`flex flex-col items-center m-1 py-6 px-12 ${bgColor}`}>
+    <h2 class={`${textColor} text-2xl font-bold mb-4`}>{title}</h2>
+    <div class="flex flex-col items-center">
+        {skills.map((skill: Skill) => (
+            <div class="flex flex-col items-center mb-2">
+                <p class="font-bold">{skill.language}</p>
+                <p>{skill.level}</p>
+            </div>
+        ))}
+    </div>
 </div>
