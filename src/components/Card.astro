@@ -4,23 +4,46 @@ interface Skill {
   level: string;
 }
 
-// Definir habilidades directamente dentro de Card.astro
-const skills: Skill[] = [
-  { language: "PHP", level: "Intermediate" },
-  { language: "Java", level: "Beginner" },
-  { language: "MySQL", level: "Intermediate" },
-  { language: "Node.js", level: "Advanced" }
-];
+const { title } = Astro.props;
 
-const { title, bgColor = "bg-slate-400", textColor = "text-gray-950" } = Astro.props;
+let skills: Skill[] = [];
+
+if (title === "Frontend") {
+    skills = [
+        { language: "JavaScript", level: "Advanced" },
+        { language: "TypeScript", level: "Intermediate" },
+        { language: "React", level: "Intermediate" },
+        { language: "HTML & CSS", level: "Advanced" },
+        { language: "Tailwind CSS", level: "Advanced" },
+        { language: "Next.js", level: "Beginner" },
+        { language: "Astro", level: "Intermediate" },
+    ];
+} else if (title === "DevOps/Tools") {
+    skills = [
+        { language: "Git", level: "Advanced" },
+        { language: "Github", level: "Advanced" },
+        { language: "Linux", level: "Advanced" },
+        { language: "Npm", level: "Advanced" },
+        { language: "Docker", level: "Intermediate" },
+        { language: "VSCode", level: "Advanced" },
+        { language: "Husky", level: "Intermediate" },
+        { language: "Jest", level: "Beginner" }
+    ];
+} else if (title === "Backend"){
+    skills = [
+        { language: "PHP", level: "Intermediate" },
+        { language: "Java", level: "Beginner" },
+        { language: "MySQL", level: "Intermediate" }
+    ];
+} 
 ---
 
-<div class={`flex flex-col items-center m-1 py-6 px-12 ${bgColor}`}>
-    <h2 class={`${textColor} text-2xl font-bold mb-4`}>{title}</h2>
+<div class={`group w-[300px] flex flex-col items-center m-4 py-6 bg-slate-500 rounded-xl transition-transform duration-300 hover:scale-110 hover:bg-slate-600`}>
+    <h2 class={`text-gray-50 text-3xl font-bold mb-4 group-hover:text-teal-500`}>{title}</h2>
     <div class="flex flex-col items-center">
-        {skills.map((skill: Skill) => (
+        {skills.map((skill) => (
             <div class="flex flex-col items-center mb-2">
-                <p class="font-bold">{skill.language}</p>
+                <p class="font-bold text-2xl">{skill.language}</p>
                 <p>{skill.level}</p>
             </div>
         ))}
