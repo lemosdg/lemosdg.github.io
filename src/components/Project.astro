@@ -15,7 +15,7 @@ const { imgSrc, title, description, url, tag } = Astro.props;
     <img class="w-[320px] h-[190px] mb-2 rounded-md" src={imgSrc} alt={title}>
     <div class="w-full flex justify-between py-2">
         <h1 class="text-gray-50 text-3xl font-bold">{title}</h1>
-        <a href={url}><img src="../src/assets/github.svg" alt="Github" width="35"></a>
+        <a href={url}><img src="/github.svg" alt="Github" width="35"></a>
     </div>
     <div class="w-full py-2 flex">
         <div class="bg-zinc-600 mr-2 px-2 rounded-md text-gray-50">{tag}</div>
